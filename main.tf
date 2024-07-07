@@ -29,6 +29,9 @@ provider "azurerm" {
   client_secret   = var.client_secret
 }
 
+# Current Context
+data "azurerm_client_config" "current" { }
+
 # Resource Group
 resource "azurerm_resource_group" "hub" {
   name       = "${local.prefix_dashed}hub${local.suffix_dashed}"
